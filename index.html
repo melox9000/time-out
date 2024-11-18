@@ -6,14 +6,51 @@
     <title>Document</title>
 </head>
 <body>
+
     <script src="p5.min.js"></script>
     <script>
+        let countodown =5;
+        let isCounting=false;
           function setup() {
-            createCanvas(500,500)
+            createCanvas(1000,500)
         }
         function draw(){
-            background(255,0,0);
+            background(0,0,0)
+            fill("red")
+            circle(100,200,175)
+            fill("red")
+            circle(300,200,175)
+            fill("red")
+            circle(500,200,175)
+            fill("red")
+            circle(700,200,175)
+            fill("red")
+            circle(900,200,175)
+            fill(255,255,255)
+            textSize(50);
+            textAlign(CENTER,CENTER);
+            text('Testa i tuoi riflessi',width /2,50);
+            
         }
+        if(isCounting){
+            if(frameCount % 60 == 0 && countodown > 0){
+                countodown--
+            }
+        }
+        text(countodown, width / 2);
+        if(countodown===0){
+            textSize(50);
+            textAlign(CENTER,CENTER);
+            fill(255,255,255)
+            text("tempo scaduto",width /2)
+        }
+    
+        function mousePressed(){
+            if(!isCounting){
+                isCounting=true;
+            }
+        }
+        
     </script>
 </body>
 </html>
